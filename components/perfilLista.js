@@ -15,7 +15,7 @@ const PerfilLista = (props) => {
 
           return <li key={item.id}>
             <h1>{item.name}</h1>
-            <QRCodeSVG value={`/lista/${item.id}`} />
+            <QRCodeSVG value={`https://qrc-ode-unitok-o09xwa8bb-guilherme013s.vercel.app/lista/${item.id}`} />
             <button onClick={() => router.push(`/lista/${item.id}`)}>Navegate</button>
           </li>
         })
