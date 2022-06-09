@@ -1,7 +1,7 @@
 import { Fragment } from "react"
-import QRCode from "./qrcode.js"
+// import QRCode from "./qrcode.js"
 import { useRouter } from "next/router"
-
+import { QRCodeSVG } from "qrcode.react"
 
 const PerfilLista = (props) => {
   const { lista } = props
@@ -15,7 +15,7 @@ const PerfilLista = (props) => {
 
           return <li key={item.id}>
             <h1>{item.name}</h1>
-            <QRCode text={item.id} />
+            <QRCodeSVG value={`/lista/${item.id}`} />
             <button onClick={() => router.push(`/lista/${item.id}`)}>Navegate</button>
           </li>
         })

@@ -1,29 +1,17 @@
-import { useRef, useEffect } from "react"
-import QRcode from "qrcode"
+import { Fragment } from "react"
 import { useRouter } from "next/router"
+
+import { QRCodeSVG } from "qrcode.react"
 
 const QRCode = ({ text }) => {
     console.log(text)
+    const router = useRouter()
 
-    const canvasRef = useRef()
-    // const router = useRouter()
+    // const mypath = router.push(`/lista/${text}`)
 
-    // const qrRoute = () => {
-    //  const mypath = router.push(`/lista/${text}`)
-    //  console.log(mypath)
-    // }
-
-    useEffect(() => {
-        QRcode.toCanvas(canvasRef.current,`/lista/${text}`, ((err) => {
-            console.log(err)
-        }))
-    }, [text])
-
-    return (
-        <div>
-            <canvas ref={canvasRef} id="canvas"></canvas>
-        </div>
-    )
+    return <Fragment>
+        <QRCodeSVG value={`/lista/${text}`} />
+    </Fragment>
 }
 
 export default QRCode
