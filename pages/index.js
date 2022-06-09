@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 
-import PerfilLista from "../../components/perfilLista"
+import PerfilLista from "../components/perfilLista"
 
 export default function Home() {
   const [renderLista, setRenderLista] = useState([])
