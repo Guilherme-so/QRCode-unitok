@@ -1,20 +1,28 @@
-import {useRef, useEffect} from "react"
+import { useRef, useEffect } from "react"
 import QRcode from "qrcode"
+import { useRouter } from "next/router"
 
-const QRCode = ({text})=> {
+const QRCode = ({ text }) => {
+    console.log(text)
+
     const canvasRef = useRef()
-console.log(text)
+    // const router = useRouter()
 
-    useEffect(()=> {
-        QRcode.toCanvas(canvasRef.current, "/api/lista-de-perfis/"+text,((err)=>{
+    // const qrRoute = () => {
+    //  const mypath = router.push(`/lista/${text}`)
+    //  console.log(mypath)
+    // }
+
+    useEffect(() => {
+        QRcode.toCanvas(canvasRef.current,`/lista/${text}`, ((err) => {
             console.log(err)
         }))
-    },[text])
+    }, [text])
 
     return (
-    <div>
-    <canvas  ref={canvasRef} id="canvas"></canvas>
-    </div>
+        <div>
+            <canvas ref={canvasRef} id="canvas"></canvas>
+        </div>
     )
 }
 

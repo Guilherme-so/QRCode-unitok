@@ -1,22 +1,22 @@
-const handler = (req,res)=> {
+const handler = (req, res) => {
     const listaId = req.query.listaId
 
-        const dummyList = [
+    const dummyList = [
         {
-            id: " pf1",
+            id: "pf1",
             name: "Petter Parker ",
             image: "someiamgeHere",
             midia: "@parker",
             description: "A poor student whose is a superhero in his spare time",
         },
-             {
-            id: " pf2",
+        {
+            id: "pf2",
             name: "Dr Strange",
             image: "someiamgeHere",
             midia: "@Strange",
             description: "A poor student whose is a superhero in his spare time",
-        },        {
-            id: " pf3",
+        }, {
+            id: "pf3",
             name: "Iron maiden",
             image: "someiamgeHere",
             midia: "@parker",
@@ -24,10 +24,10 @@ const handler = (req,res)=> {
         },
     ]
 
-    if(req.method === "GET"){
+    if (req.method === "GET") {
         const lista = dummyList.find((item) => item.id === listaId)
         console.log(lista)
-        res.status(200).json({message: "success", singleLista: lista})
+        res.status(200).json({ message: "success", singleLista: lista })
     }
 }
 
