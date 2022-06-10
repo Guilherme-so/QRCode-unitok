@@ -32,7 +32,7 @@ export default function Home() {
       <title>Lista De Perfis.</title>
     </Head>
     <div className={styles.home}>
-      <h1>Lista de Perfis.</h1>
+      <h1>Lista De Perfis.</h1>
       <PerfilLista lista={renderLista} />
     </div>
   </Fragment>
