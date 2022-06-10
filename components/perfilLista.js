@@ -1,22 +1,19 @@
 import { Fragment } from "react"
-// import QRCode from "./qrcode.js"
 import { useRouter } from "next/router"
 import { QRCodeSVG } from "qrcode.react"
+import styles from "./perfilLista.module.css"
 
 const PerfilLista = (props) => {
   const { lista } = props
 
-  const router = useRouter()
-
   return <Fragment>
-    <ul>
+    <ul className={styles.lista}>
       {
         lista.map((item) => {
 
-          return <li key={item.id}>
-            <h1>{item.name}</h1>
-            <QRCodeSVG value={`https://qrc-ode-unitok-o09xwa8bb-guilherme013s.vercel.app/lista/${item.id}`} />
-            <button onClick={() => router.push(`/lista/${item.id}`)}>Navegate</button>
+          return <li key={item.id}  className={styles.listaItem}>
+            <h2>{item.name}</h2>
+            <QRCodeSVG className={styles.qrcode} value={`https://qrc-ode-unitok-o09xwa8bb-guilherme013s.vercel.app/lista/${item.id}`} />
           </li>
         })
       }

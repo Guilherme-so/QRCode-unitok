@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, Fragment } from "react"
+import Head from "next/head"
 import { useRouter } from "next/router"
+import SinglePage from "../../components/singlePage"
 
 const SinglePerfil = () => {
     const [singleProfile, setSingleProfile] = useState()
@@ -18,14 +20,15 @@ const SinglePerfil = () => {
     }, [listaId])
 
     if (!singleProfile) {
-        return <p>Loading...</p>
+        return <p className="loading">Loading...</p>
     }
 
-    return <div>
-        <h4>Nome: {singleProfile.name}</h4>
-        <p>Nome: {singleProfile.description}</p>
-
-    </div>
+    return <Fragment>
+    <Head>
+        <title>{singleProfile.name}</title>
+    </Head>
+        <SinglePage lista={singleProfile} />
+    </Fragment>
 }
 
 export default SinglePerfil
