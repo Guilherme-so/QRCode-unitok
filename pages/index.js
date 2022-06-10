@@ -28,10 +28,9 @@ export default function Home() {
 
   return (
   <Fragment>
-  <Head>
+    <Head>
       <title>Lista De Perfis.</title>
     </Head>
-
     <div className={styles.home}>
       <h1>Lista de Perfis.</h1>
       <PerfilLista lista={renderLista} />

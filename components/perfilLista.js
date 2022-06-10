@@ -1,5 +1,4 @@
-import { Fragment } from "react"
-import { useRouter } from "next/router"
+import {Fragment} from "react"
 import { QRCodeSVG } from "qrcode.react"
 import styles from "./perfilLista.module.css"
 
@@ -13,7 +12,7 @@ const PerfilLista = (props) => {
 
           return <li key={item.id}  className={styles.listaItem}>
             <h2>{item.name}</h2>
-            <QRCodeSVG className={styles.qrcode} value={`https://qrc-ode-unitok-o09xwa8bb-guilherme013s.vercel.app/lista/${item.id}`} />
+            <QRCodeSVG className={styles.qrcode} value={`https://qrc-ode-unitok.vercel.app/lista/${item.id}`} />
           </li>
         })
       }
